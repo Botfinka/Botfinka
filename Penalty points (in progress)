@@ -1,0 +1,27 @@
+// Enter the speed at which you were caught driving to check the number of penalty points you incurred
+// Speed limit = 100
+// if speed <= 100 return 'Your speed was fine. No penalty.'
+// for every 10km above the speed limit, get 1 penalty point
+//      e.g. 
+//      85 = Your speed was fine. No penalty.
+//      108 = Your speed was fine. No penalty.
+//      110 = Points: 1
+//      120 = Points: 2
+// more than 10 penalty points = 'License suspended.'
+
+checkSpeed();
+function checkSpeed(speed) {
+    const speedLimit = 100;
+    const kmPerPoint = 10;
+
+if (speed < speedLimit + kmPerPoint)
+console.log('Your speed was fine. No penalty.');
+
+else {
+    const points = Math.floor((speed - speedLimit) / kmPerPoint);
+    if (points >= 10)
+    console.log('License suspended');
+    else
+    console.log('Points: ', points);
+}
+}
